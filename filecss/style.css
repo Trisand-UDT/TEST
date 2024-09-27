@@ -3381,18 +3381,21 @@ Copyright (c) 2015 Daniel Eden
 *:after{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-}
+    box-sizing: border-box;}
+
 button{
-    background-color: #02cb69;
+    background-color: green;
     border: 100%;
     color: #ffffff;
     margin: 10px 0 30px 0;
     padding: 5px 20px;
-    border-radius: 10px;
+    border-radius: solid;
     outline: none;
-    cursor: pointer;
-}
+    cursor: pointer;}
+
+button:hover{
+      background: red;}
+
 #alert{
     border: 100%;
     width: 50%;
@@ -3405,5 +3408,44 @@ button{
     right: 0;
     bottom: 175px;
     border-radius: 10px;
-    display: none;
-}
+    display: none;}
+
+.hadiah{
+      text-shadow: 0.5px 0.5px 0.5px black;}
+
+    *{
+form{
+      margin: 0% 0%;
+      width: 80%;
+      font-size: 17px;
+      text-shadow: 1px 1px 1px black;}
+
+form h2{
+      text-align: center;}
+    
+form label{
+      display: block;
+      margin-bottom: 1%;}
+    
+form input, form textarea{
+      width: 100%;
+      padding: 1%;
+      margin-bottom: 0%;
+      box-sizing: border-box;
+      border: 1.5px solid black;
+      resize: vertical;
+      border-radius: solid;}
+    
+form button{
+      background: green;
+      color: white;
+      padding: 3% 5%;
+      margin-top: 3%;
+      border: 100%;
+      border: 1px solid black;
+      cursor: pointer; 
+      border-radius: solid;}
+    
+form button:hover{
+      background: red;}
+
