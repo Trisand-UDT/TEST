@@ -10,4 +10,4 @@
             scrollDirection = 1; // Scroll down 
         } 
     } 
-    setInterval(autoScroll, 25); 
+    setInterval(autoScroll, 20); 
