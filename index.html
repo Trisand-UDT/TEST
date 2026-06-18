@@ -3902,10 +3902,8 @@ var context = new AudioContext();
                                                                                                                 <div class="divider fun-div-515" style="height: 0.3px; background: #613319; width: 85%; margin: 10px auto 20px;">
                                         <span class="fun-span-98"></span>
                                     </div>
-                                    <p id="awal-fun-p-id5" style="font-size: 15px; margin-top: 10px; color: #212121 !important;" class="fun-p-114">
-                                        Kepada
-                                    </p>
-                                    <p style="font-weight: bold; margin-top: 0px; font-size: 25px; color: #212121 !important;" id="kpd" class="fun-p-115">YTH</p>             
+<div style="font-size: 16px; color: auto !important;">Kepada Bapak/Ibu/Saudara/i :</div>
+<div style="font-size: 17px; color: auto !important;" id="to">YTH</div>            
                                     <div class="btn-wrapper fun-div-516">
                                         <a class="btn btn-elegan-nature fun-a-31" role="button" id="btn-envelope">                                          
                                             <i aria-hidden="true" class="button"><i style="font-size: 1.8rem; margin-top: 0 auto; color: white">&#9993;</i> Buka Undangan</a>
@@ -6572,6 +6570,7 @@ const scrollToBox2 =  () => {
                                    </script>
 
 
+<!=============AWAL_NAMA_TAMU=============!>
   <script>
 
     function sanitizeHtml(str) {
@@ -6580,15 +6579,16 @@ const scrollToBox2 =  () => {
     }
 
     let searchParams = new URLSearchParams(window.location.search)
-    searchParams.has('kpd')
-    let param = sanitizeHtml(searchParams.get('kpd'))
+    searchParams.has('to')
+    let param = sanitizeHtml(searchParams.get('to'))
 
         if (param == null || param == '' || param == 'null') {
         } else {
-            $("#kpd").html(param)
+            $("#to").html(param)
         }
 
    </script>
+<!=============AKHIR_NAMA_TAMU=============!>
 
 
 </body>
