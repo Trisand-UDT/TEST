@@ -1,0 +1,28 @@
+:root {
+    --transition-counter-bg: #E8D9C4;
+    --counter-bg: #E8D9C4;
+    --counter-color: #00291B;
+    --counter-radius: 5px;
+    --counter-line-bg: #E8D9C4;
+    --counter-line-size: 0.1px;
+    --invitation-bg : #3E160C;
+    --invitation-bg-light: #F5F8FF;
+    --text-primary: #E8D9C4;
+    --text-primary-hover: #773123;
+    --text-secondary: #00291B;
+    --bs-primary: #785D32;
+    --bs-primary-hover: #996800;
+    --bg-primary: #785D32;
+    --bg-primary-dark: #785D32;
+    --bs-primary-light:#E8D9C4;
+    --bg-secondary: #785D32;
+    --bs-secondary: #785D32;
+    --bs-secondary-hover: #785D32;
+    --bs-secondary-light: #E8D9C4;
+    --bs-text-light: #E8D9C4;
+    --tone-color-1: #785D32;
+    --tone-color-2: #F5F2F0;
+    --tone-color-3: #E8D9C4;
+    --tone-color-4: #3E160C;
+    --tone-color-5: #785D32;
+}
