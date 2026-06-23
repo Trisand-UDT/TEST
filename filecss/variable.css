@@ -1,0 +1,18 @@
+:root{
+    --transition-counter-bg: #8aa4c5;
+    --counter-bg: #A6522b;
+    --counter-color: #fff;
+    --counter-radius: 5px;
+    --counter-line-bg: #A6522b;
+    --counter-line-size: 0.1px;
+    --invitation-bg : #000;
+    --invitation-bg-light: #3f3f3f;
+    --bs-primary:#ffffff;
+    --bs-primary-hover:#d3d3d3;
+    --bs-primary-light:#2d2d2d;
+    --bs-secondary: #E09F74;
+    --bs-secondary-hover: #c58a63;
+    --bs-secondary-light: #f7ddcc;
+    --bs-secondary-rgb: 97, 51, 32;
+    --bs-text-light: #ffffff;
+}

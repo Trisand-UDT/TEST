@@ -1,0 +1,523 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: var(--invitation-bg);
+}
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font: 14px arial;
+    color: white;
+}
+/* Saat fade-in (modal muncul) */
+#modalInvitation.fade.show {
+    transition: opacity 0.0s ease-in; /* cepat */
+}
+
+/* Saat fade-out (modal hilang) */
+#modalInvitation.fade {
+    transition: opacity 1.5s ease-out; /* lambat */
+}
+
+/* Backdrop */
+#modalInvitation-backdrop.fade.show {
+    transition: opacity 0.0s ease-in;
+}
+#modalInvitation-backdrop.fade {
+    transition: opacity 1.5s ease-out;
+}
+#modalInvitation.fade .modal-dialog {
+    transform: none !important;
+}
+html body {
+    background-color: var(--invitation-bg);
+    font-family: "Poppins", serif;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, bottom left;
+    background-attachment: fixed;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow:hidden;
+}
+
+#content-scroll {
+    height: 100dvh;
+    overflow-y: scroll !important;
+    scroll-snap-type: y mandatory;   /* atau proximity */
+    scroll-behavior: smooth;
+    /* opsional utk iOS */
+    -webkit-overflow-scrolling: touch;
+}
+.snap-page {
+    min-height: 100dvh;
+    /* height: 100dvh; */
+    scroll-snap-align: start; /* atau center */
+    scroll-snap-stop: always;
+
+}
+[data-aos]{
+    opacity: 1 !important;
+}
+.snap-page {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease;
+}
+
+.snap-page.active-section {
+  opacity: 1;
+  pointer-events: auto;
+}
+.bg-pan{
+    background-position: center;
+    background-size: cover;     /* proporsional, penuh */
+    animation: pan 60s ease-in-out infinite;
+}
+
+.bg-navigation {
+    background-color: white;
+    border-radius: 30px !important;
+    margin-bottom: 10px;
+}
+.bg-secondary {
+    background-color: var(--bs-secondary) !important;
+}
+#modalInvitation .modal-content {
+    background-color: var(--invitation-bg);
+}
+.font-title {
+    font-family: "Raleway", cursive;
+}
+#cover .title,
+#modalInvitation .title {
+    font-size: 32px !important;
+}
+#cover .sub-title {
+    font-size: 28px !important;
+}
+
+#countdown .badge-primary {
+    background-color: transparent !important;
+    padding: 15px;
+    width: 40px;
+    aspect-ratio: 1/1;
+    margin: 3px;
+    border-radius: 10%;
+    border: 1px solid white;
+}
+.label-countdown {
+    margin: 0;
+}
+.floating-button{
+    opacity: .5;;
+}
+.splide__arrow {
+    background: #ccc;
+}
+.splide--nav
+    > .splide__slider
+    > .splide__track
+    > .splide__list
+    > .splide__slide.is-active,
+.splide--nav > .splide__track > .splide__list > .splide__slide.is-active {
+    border: 3px solid white;
+}
+.splide__arrow svg {
+    fill: var(--bs-primary);
+}
+#main-slider .splide__slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.form-control.form-control-solid {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-primary);
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+.dropdown.show > .form-control.form-control-solid,
+.form-control.form-control-solid:active,
+.form-control.form-control-solid.active,
+.form-control.form-control-solid:focus,
+.form-control.form-control-solid.focus {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-primary);
+}
+#kt_content {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.card-transparant {
+    background-color: var(--invitation-bg);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 30%);
+    color: var(--bs-primary);
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+}
+.card-cover {
+    background-image: url(/themes/sagea/img/leaf-3.png);
+    background-position-x: center;
+    background-position-y: -61px;
+    background-repeat: no-repeat;
+    padding-top: 109px;
+}
+.bg-avatar .symbol {
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 30%);
+    outline: 4px solid var(--bs-secondary);
+    outline-offset: -12px;
+}
+.border-avatar {
+    position: fixed;
+    height: 150px !important;
+    width: auto !important;
+    left: -31px;
+    z-index: -1;
+}
+.btn-primary,
+.btn-primary ,
+.btn-primary .fas {
+    background-color: white !important;
+    color: black !important;
+}
+
+#bride .btn-primary{
+    color: white !important;
+}
+
+.modal .btn-primary,
+.modal .btn-primary ,
+.modal .btn-primary .fas {
+    background-color: var(--bs-primary-hover) !important;
+    color: black !important;
+}
+.btn-secondary,
+.btn-secondary,
+.btn-secondary .fas {
+    background-color: var(--bs-secondary) !important;
+    color: var(--bs-text-light) !important;
+}
+.btn-light,
+.btn-light .bi,
+.btn-light .fas {
+    background-color: var(--bs-primary-light) !important;
+    color: var(--bs-primary) !important;
+}
+
+#bride .btn-primary{
+    background-color: transparent !important;
+    border: 1px solid white !important;
+}
+#ig-stories .btn-primary{
+    background-color: var(--bs-primary) !important;
+    color: black !important;
+    border-radius: 20px !important;
+}
+
+#ig-stories .bi{
+    background-color: white !important;
+    color: black !important;
+}
+
+.badge-primary {
+    color: #FFF !important;
+}
+.nav-link {
+    color: var(--bs-primary) !important;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: var(--bs-text-light) !important;
+    background-color: var(--bs-primary) !important;
+    border-radius: 50px;
+    width: 75px;
+}
+.svg-icon.svg-icon-primary svg [fill]:not(.permanent):not(g) {
+    fill: var(--invitation-bg) !important;
+}
+
+.svg-icon.svg-icon-light [fill]:not(.permanent):not(g) {
+    fill: var(--invitation-bg) !important;
+}
+.bg-cover {
+    opacity: 0.8;
+}
+.timeline .timeline-line {
+    border-left-color: var(--bs-secondary);
+}
+.border-primary {
+    border-color: var(--bs-primary) !important;
+}
+.border-secondary {
+    border-color: var(--bs-secondary) !important;
+}
+/* .btn.btn-secondary {
+    color: #ffffff;
+    border-color: var(--bs-secondary) !important;
+    background-color: var(--bs-secondary) !important;
+} */
+.rounded {
+    border-radius: 30px !important;
+    overflow: hidden;
+}
+.rounded-sm {
+    border-radius: 10px !important;
+}
+.rounded-md{
+    border-radius: 46px !important;
+    overflow: hidden;
+}
+.text-light {
+    color: var(--bs-text-light) !important;
+}
+.animate-zoom-in-out {
+    animation: zoom-in-zoom-out 2s ease infinite;
+    transform-origin: bottom center;
+}
+.bg-invitation {
+    background-color: var(--invitation-bg);
+}
+.bg-invitation-light {
+    background-color: var(--invitation-bg-light);
+}
+.bg-invitation-dark {
+    background-color: var(--bs-primary-hover);
+}
+
+.square-top {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+.square-bottom {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.square-left {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.square-right {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.right-0 {
+    right: 0;
+}
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1.2, 1.2);
+    }
+    50% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1.2, 1.2);
+    }
+}
+li.splide__slide {
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px !important;
+}
+.splide--nav
+    > .splide__slider
+    > .splide__track
+    > .splide__list
+    > .splide__slide,
+.splide--nav > .splide__track > .splide__list > .splide__slide {
+    border: 0px;
+}
+
+#ig-story .font-title.text-primary {
+    color: var(--bs-text-light) !important;
+}
+#ig-story a.btn.btn-primary.btn-flex.flex-column.w-100.mb-5.fs-7 {
+    background-color: white;
+    color: black;
+}
+#ig-story a.btn.btn-primary.btn-flex.flex-column.w-100.mb-5.fs-7 span {
+    color: var(--bs-text-light) !important;
+}
+.btn.btn-secondary:hover:not(.btn-active) {
+    background-color: var(--bs-secondary-hover) !important;
+}
+.btn.btn-primary .svg-icon svg [fill]:not(.permanent):not(g) {
+    transition: fill 0.3s ease;
+    fill: #ffffff;
+}
+
+/* .btn.btn-primary:hover:not(.btn-active)
+    .svg-icon
+    svg
+    [fill]:not(.permanent):not(g) {
+    transition: fill 0.3s ease;
+    fill: #ffffff;
+} */
+.left-0 {
+    left: 0 !important;
+}
+.frame-bridge-top img {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    height: auto;
+    width: 60%;
+}
+
+.frame-bridge-bottom img {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    height: auto;
+    width: 60%;
+}
+
+.mr-15 {
+    margin-right: 3.75rem !important;
+}
+.ml-15 {
+    margin-left: 3.75rem !important;
+}
+
+.card-shadow-lovestory {
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 30%);
+    border: 8px #fff solid;
+}
+.timeline-label:before {
+    left: 48.5%;
+    top: 20px;
+    border-left: 4px dotted var(--bs-primary);
+}
+
+.border-primary-wishes {
+    border: 1px var(--bs-primary) solid;
+}
+.flip-image {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+    .gallery-image {
+        height: 88px !important;
+    }
+}
+
+.square-image {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* = width for a 1:1 aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* you change this to "contain" if you don't want the images to be cropped */
+}
+
+.container-video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-rounded{
+    background-color: var(--invitation-bg);
+    border-radius: 30px !important;
+    margin-bottom: 10px;
+}
+
+.card-gift{
+    background-color: var(--invitation-bg);
+    border-radius: 30px !important;
+    margin-bottom: 10px;
+}
+
+#wish .form-control{
+    border: 0px;
+    background-color: var(--invitation-bg-light) !important;
+    color: var(--bs-primary) !important;
+}
+#wish .form-control:focus{
+    color: var(--bs-primary) !important;
+    background-color: rgb(23, 23, 23) !important;
+}
+#wish .form-control::placeholder{
+    color: #adadad !important;
+}
+
+#wish .scroll .bg-invitation{
+    background-color: #000000b1 !important;
+}
+
+.wish-item{
+    white-space: normal;       /* pastikan tidak tetap satu baris */
+    overflow-wrap: anywhere;   /* bisa patah di mana saja */
+    word-break: break-word;    /* fallback */
+}
+
+.frame.ar-9-16 .form-control.bg-primary{
+    background-color: var(--invitation-bg-light) !important;
+    border-color: var(--invitation-bg-light) !important;
+    color: var(--bs-primary) !important;
+}
+.kenburns-top {
+	-webkit-animation: kenburns-top 40s ease-in-out infinite alternate-reverse both;
+	        animation: kenburns-top 40s ease-in-out infinite alternate-reverse both;
+}
+.slide-in-top {
+	-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#text-address-modal-gift{
+    color: var(--invitation-bg) !important;
+}
+
+#mitra-container {
+    background: transparent !important;
+    color: white !important;
+}
+
+#mitra-container .text-dark,
+#mitra-container .bi-geo-alt-fill {
+    color: white !important;
+}
+
+#limited-event{
+    background-color: rgba(255, 255, 255, 0.05);
+}
