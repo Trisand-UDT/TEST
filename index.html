@@ -3478,6 +3478,7 @@ Klik Untuk Mulai<br>Memuat Aset Undangan
 
 <button id="btn_open" type="button" 
 style="z-index: 99999999 !important; text-align: center;" 
+onclick="bukaUndanganLayarPenuh()" 
 class="btn-rosegold-cut animate-zoom-in-out">
 <span class="garis-cahaya"></span>
 <span class="teks-tombol">BUKA UNDANGAN</span>
@@ -6007,130 +6008,37 @@ function kirimWhatsApp() {
 <!--======AKHIR_CEGAH_LAYAR_MATI========-->
 
 
-<!--=============AWAL_FIX_TOMBOL=============-->
+<!--======AWAL_SCP_TOMBOL_PEMBUKA_UNDANGAN========-->
 
-<script type="text/javascript">
-// ==========================================
-// 1. PENGATURAN & KONTROL AUTO SCROLL
-// ==========================================
-var isPaused = false;
-var scrollSpeed = 25; 
-
-var urlParams = new URLSearchParams(window.location.search);
-var scrollValue = urlParams.get('scroll');
-if (scrollValue) {
-    scrollSpeed = parseInt(scrollValue);
-}
-
-function runAutoScroll() {
-    if (window.autoScrollInterval) window.clearInterval(window.autoScrollInterval);
+<script>
+$('#btn_open').on('click', function() {
+    // 1. Langsung hilangkan halaman/sampul pembuka undangan
+    $('.cover-section').hide().remove();
     
-    window.autoScrollInterval = window.setInterval(function() {
-        if (!isPaused) {
-            window.scrollBy(0, 1);
-        }
-    }, scrollSpeed);
-}
-
-$(document).ready(function() {
-    $('#auto_scroll').on('click', function(e) {
-        e.preventDefault();
-        if (isPaused) {
-            $('#menu_auto_scroll').css('background-color', '#4970ea');
-            $('.notif_scroll').show();
-            isPaused = false;
-        } else {
-            $('#menu_auto_scroll').css('background-color', 'transparent');
-            $('.notif_scroll').hide();
-            isPaused = true;
-        }
-    });
-});
-
-
-// ==========================================
-// 2. FUNGSI UTAMA EKSEKUSI PEMBUKA UNIVERSAL
-// ==========================================
-function aksiBukaUndanganUniversal() {
-    // A. Paksa browser agar bisa di-scroll ke bawah
-    $('body, html').css({
-        "overflow": "auto",
-        "overflow-y": "auto",
-        "height": "auto"
-    });
-
-    // B. Jalankan Fungsi Auto Scroll
-    runAutoScroll();
-
-    // C. Eksekusi Animasi Internal Bawaan Template (Bila Tersedia)
-    try { if (typeof runAnimationOrnament === "function") runAnimationOrnament(); } catch(err){}
-    try { if (typeof runAnimationLoop === "function") runAnimationLoop(); } catch(err){}
-    try { if (typeof runAnimationWithoutScrollTrigger === "function") runAnimationWithoutScrollTrigger(); } catch(err){}
-
-    // D. Bersihkan Lapisan Penghalang Cover Tanpa Menyembunyikan Elemen di Dalamnya
-    // Menghilangkan gambar latar belakang penutup & blokir klik, tapi membiarkan konten/art.png tetap hidup
-    var targetCover = $(".cover-section, .awal, .envelope-wrapper, #envelope, .wedding-envelope, .opening-cover");
-    
-    targetCover.addClass("cover-opened");
-    targetCover.css({
-        "background-image": "none",
-        "background-color": "transparent",
-        "background": "transparent",
-        "pointer-events": "none",       // Membuat lapisan tembus klik agar konten bawah bisa disentuh
-        "border": "none",               // Menghapus garis bingkai cover yang tersisa
-        "box-shadow": "none"            // Menghapus bayangan cover yang tersisa
-    });
-
-    // E. Sembunyikan elemen pembungkus tombol utama secara presisi menggunakan fadeOut
-    $("#btn_open, .awal").closest("div[style*='z-index']").fadeOut(600);
-    $("#btn_open, .awal").closest(".fun-div-467").fadeOut(600);
-    
-    // Hilangkan teks tombol atau form pembuka bawaan template jika masih ada di area cover
-    targetCover.find("button, .btn, form, .guest-box").fadeOut(500);
-
-    // F. Tampilkan Menu Navigasi Utama
-    $(".fix-menu, .navbar-holder, .bottom-nav, #menu-bawah").show();
-
-    // G. Putar Audio / Musik Latar Belakang
-    $("audio").each(function() {
-        try { this.play(); } catch(err) { console.log("Musik gagal berputar otomatis:", err); }
-    });
-    if ($("#playAudio").length) try { $("#playAudio").get(0).play(); } catch(e){}
-    if ($("#playAudioS").length) try { $("#playAudioS").get(0).play(); } catch(e){}
-}
-
-
-// ==========================================
-// 3. PEMICU / TRIGGER KLIK (BANYAK METODE)
-// ==========================================
-$(document).ready(function() {
-
-    // Metode 1: Tombol Kustom #btn_open
-    $(document).on('click', '#btn_open', function(e) {
-        e.preventDefault();
-        aksiBukaUndanganUniversal();
-    });
-
-    // Metode 2: Class bawaan .awal
-    $(document).on('click', '.awal', function(e) {
-        if ($('#popup-notif').length) return; 
-        aksiBukaUndanganUniversal();
-    });
-
-    // Metode 3: Deteksi Tombol Berisi Teks Buka/Open
-    $(document).on('click', "button, a", function(e) {
-        var teksTombol = $(this).text().toLowerCase();
-        if (teksTombol.includes("buka") || teksTombol.includes("open")) {
-            if (!$(".cover-section, .awal").hasClass("cover-opened")) {
-                aksiBukaUndanganUniversal();
-            }
-        }
-    });
-
+    // 2. Opsional: Jika tombol itu sendiri dibungkus elemen lain yang ingin dihilangkan
+    $(this).hide().remove(); 
 });
 </script>
 
-<!--=============AKHIR_FIX_TOMBOL=============-->
+<!--======AKHIR_SCP_TOMBOL_PEMBUKA_UNDANGAN========-->
+
+
+<!--=========AWAL-OTOMATIS-LAYAR-PENUH=========-->
+<script>
+    function bukaUndanganLayarPenuh() {
+        var elem = document.documentElement; // Mengambil seluruh halaman website
+
+        // Menjalankan fungsi layar penuh untuk berbagai jenis browser (Android & PC)
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Dukungan untuk Safari / Chrome versi lama */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* Dukungan untuk Internet Explorer / Edge lama */
+            elem.msRequestFullscreen();
+        }
+    }
+</script>
+<!--=========AKHIR-OTOMATIS-LAYAR-PENUH=========-->
 
 
 <!--============AWAL_LOADING_BUKA_UNDANGAN02============--!>
